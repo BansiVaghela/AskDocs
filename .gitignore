@@ -1,0 +1,50 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+*.egg-info/
+dist/
+build/
+.Python
+
+# ── ChromaDB (local vector database — can be rebuilt by running ingest.py) ────
+Backend/chroma_db/
+
+# ── PDF Policies (may contain private company data) ──────────────────────────
+Backend/policies/
+
+# ── Xcode ─────────────────────────────────────────────────────────────────────
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+.build/
+
+# ── Swift Package Manager ─────────────────────────────────────────────────────
+.swiftpm/
+Packages/
+Package.resolved
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# ── Secrets / Keys (safety net) ───────────────────────────────────────────────
+*.pem
+*.key
+*.p12
+*.cer
+*.mobileprovision
+secrets.*
+config.secret.*
