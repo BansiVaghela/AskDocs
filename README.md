@@ -1,6 +1,6 @@
-# RAG Demo
+# AskDocs
 
-A local Retrieval-Augmented Generation (RAG) app — upload PDFs and ask questions answered strictly from your documents.
+A local Retrieval-Augmented Generation (RAG) app — upload PDFs from your iPhone and ask questions answered strictly from your documents.
 
 ## Stack
 
@@ -43,19 +43,25 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. Add your PDFs
-Drop PDF files into `Backend/policies/`, then run:
-```bash
-python ingest.py
-```
-
-### 4. Start the server
+### 3. Start the server
 ```bash
 uvicorn app:app --reload
 ```
 
-### 5. iOS App
+### 4. iOS App
 Open `RAG_Demo_UI/RAG_Demo_UI.xcodeproj` in Xcode and run on the simulator.
+
+### 5. Upload PDFs
+Use the **Documents** tab in the app to upload PDFs directly. The backend will ingest them automatically.
+
+> **Simulator note:** Drag your PDF into the Simulator's Files app first, then use the upload button in AskDocs.
+
+## Bulk Ingest (Optional)
+
+If you want to pre-load PDFs without the app, drop them into `Backend/policies/` and run:
+```bash
+python ingest.py
+```
 
 ## API Endpoints
 
@@ -69,5 +75,5 @@ Open `RAG_Demo_UI/RAG_Demo_UI.xcodeproj` in Xcode and run on the simulator.
 
 ## Notes
 
-- `chroma_db/` and `policies/` are excluded from git — rebuild locally using `ingest.py`
+- `chroma_db/` and `policies/` are excluded from git — they are rebuilt when you upload documents via the app
 - All AI runs locally — no data leaves your machine

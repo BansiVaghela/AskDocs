@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import Combine
 import UniformTypeIdentifiers
 
 // MARK: - Theme
@@ -86,7 +87,7 @@ struct ContentView: View {
                 Image(systemName: "sparkles")
                     .foregroundColor(Theme.accent)
                     .font(.subheadline)
-                Text("DocuMind")
+                Text("AskDocs")
                     .font(.headline)
                     .foregroundColor(.primary)
             }
@@ -264,7 +265,7 @@ struct ContentView: View {
 
     // MARK: - Export
     private func exportText() -> String {
-        var lines = ["DocuMind — Chat Export", "Model: \(state.selectedModel)", ""]
+        var lines = ["AskDocs — Chat Export", "Model: \(state.selectedModel)", ""]
         for msg in messages {
             lines.append("\(msg.isUser ? "You" : "Assistant"): \(msg.text)")
             if !msg.isUser && !msg.sources.isEmpty {
@@ -289,7 +290,7 @@ struct WelcomeView: View {
                     .foregroundStyle(Theme.userBubble)
             }
             VStack(spacing: 8) {
-                Text("DocuMind")
+                Text("AskDocs")
                     .font(.title2.bold())
                 Text("Upload PDFs and ask questions.\nAnswers are grounded in your documents.")
                     .font(.subheadline)
